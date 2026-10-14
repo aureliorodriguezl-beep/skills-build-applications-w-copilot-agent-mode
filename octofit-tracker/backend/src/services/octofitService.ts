@@ -4,7 +4,19 @@ export async function listActivities() {
   return Activity.find().lean();
 }
 
-export async function createActivity(_input: unknown) {
+export async function createActivity(input: unknown) {
+  const activity = input && typeof input === 'object' && !Array.isArray(input)
+    ? input as Record<string, unknown>
+    : {};
+  const { userId, teamId, type, minutes } = activity;
+  if (
+    typeof userId !== 'string' || !userId.trim() ||
+    typeof teamId !== 'string' || !teamId.trim() ||
+    typeof type !== 'string' || !type.trim() ||
+    typeof minutes !== 'number' || !Number.isFinite(minutes)
+  ) {
+    throw Object.assign(new Error('Activity requires userId, teamId, type, and numeric minutes'), { status: 400 });
+  }
   throw Object.assign(new Error('Activity validation is not implemented yet'), { status: 501 });
 }
 
