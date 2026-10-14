@@ -30,10 +30,10 @@ OctoFit Tracker is a three-tier application for a school fitness program. The st
 
 Record your plan here before editing code.
 
-- Presentation tier decision:
-- Logic tier decision:
-- Data tier decision:
-- Activity tracking approach:
+- Presentation tier decision:Utilizar componentes frontend reutilizables y consumir únicamente APIs estables para mostrar actividades, equipos y clasificaciones.
+- Logic tier decision: Implementar los servicios y rutas API después de completar las validaciones.
+- Data tier decision:Completar primero los modelos de datos y mantener datos semilla consistentes.
+- Activity tracking approach:Implementar modelos y validaciones antes de exponer APIs.
 - Team management approach:Implementar primero servicios y rutas API para equipos.
 - Leaderboard approach:Implementar el leaderboard después de estabilizar la API.
 - Workout suggestions approach:Implementar recomendaciones cuando backend y frontend estén completos.
