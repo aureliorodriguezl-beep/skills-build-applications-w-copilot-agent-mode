@@ -34,9 +34,9 @@ Record your plan here before editing code.
 - Logic tier decision:
 - Data tier decision:
 - Activity tracking approach:
-- Team management approach:
-- Leaderboard approach:
-- Workout suggestions approach:
+- Team management approach:Implementar primero servicios y rutas API para equipos.
+- Leaderboard approach:Implementar el leaderboard después de estabilizar la API.
+- Workout suggestions approach:Implementar recomendaciones cuando backend y frontend estén completos.
 
 ## Test plan
 
