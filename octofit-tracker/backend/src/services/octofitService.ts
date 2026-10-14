@@ -17,6 +17,13 @@ export async function createActivity(input: unknown) {
   ) {
     throw Object.assign(new Error('Activity requires userId, teamId, type, and numeric minutes'), { status: 400 });
   }
+  const [user, team] = await Promise.all([
+    User.exists({ _id: userId }),
+    Team.exists({ _id: teamId }),
+  ]);
+  if (!user || !team) {
+    throw Object.assign(new Error('Activity user or team does not exist'), { status: 404 });
+  }
   throw Object.assign(new Error('Activity validation is not implemented yet'), { status: 501 });
 }
 
